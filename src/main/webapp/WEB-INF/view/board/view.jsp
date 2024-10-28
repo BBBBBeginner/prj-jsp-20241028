@@ -11,33 +11,27 @@
 </head>
 <body>
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
-<h2>게시물 목록</h2>
-<table>
-    <thead>
-    <tr>
-        <th>번호</th>
-        <th>제목</th>
-        <th>작성자</th>
-        <th>작성일시</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${boardList}" var="board">
-        <tr>
-            <td>${board.id}</td>
-            <td>${board.title}</td>
-            <td>
-                <a href="/board/view?id=${board.id}">
-                        ${board.title}
-                </a>
-            </td>
-            <td>${board.writer}</td>
-            <td>${board.inserted}</td>
-        </tr>
-    </c:forEach>
 
-    </tbody>
-</table>
+<h2>${board.id}번 게시물</h2>
+<div>
+    제목
+    <input type="text" value="${board.title}" readonly>
+</div>
+<div>
+    본문
+    <textarea id="" cols="30" rows="10" readonly>${board.content}</textarea>
+</div>
+<div>
+    작성자
+    <input type="text" value="${board.writer}" readonly>
+</div>
+<div>
+    작성일시
+    <input type="datetime-local" value="${board.inserted}" readonly>
+</div>
+</body>
+</html>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
