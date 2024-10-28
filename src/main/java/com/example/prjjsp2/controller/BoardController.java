@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 
@@ -29,9 +30,10 @@ public class BoardController {
     }
 
     @PostMapping("new")
-    public String newBoard(Board board) {
+    public String newBoard(Board board, RedirectAttributes rttr) {
         service.add(board);
 
+        rttr.addAttribute("id", board.getId());
         return "redirect:/board/list";
     }
 

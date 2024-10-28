@@ -3,6 +3,7 @@ package com.example.prjjsp2.mapper;
 import com.example.prjjsp2.dto.Board;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
@@ -16,6 +17,7 @@ public interface BoardMapper {
             (title, content, writer)
             VALUES (#{title}, #{content}, #{writer})
             """)
+    @Options(useGeneratedKeys = true, keyProperty = "id")
     int insert(Board board);
 
 
