@@ -26,7 +26,9 @@ public class BoardController {
     }
 
     @PostMapping("new")
-    public void newBoard(Board board) {
+    public String newBoard(Board board) {
         service.add(board);
+
+        return "redirect:/board/new";
     }
 }
