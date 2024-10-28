@@ -10,6 +10,7 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
+<c:import url="/WEB-INF/fragment/navbar.jsp"/>
 <h2>게시물 목록</h2>
 <table>
     <thead>
