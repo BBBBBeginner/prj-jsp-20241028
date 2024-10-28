@@ -32,7 +32,7 @@ public class BoardController {
     public String newBoard(Board board) {
         service.add(board);
 
-        return "redirect:/board/list";
+        return "redirect:/board/new";
     }
 
     @GetMapping("list")
