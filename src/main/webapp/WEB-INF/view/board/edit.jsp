@@ -11,38 +11,26 @@
 </head>
 <body>
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
-
-<h2>${board.id}번 게시물</h2>
-<div>
-    제목
-    <input type="text" value="${board.title}" readonly>
-</div>
-<div>
-    본문
-    <textarea id="" cols="30" rows="10" readonly>${board.content}</textarea>
-</div>
-<div>
-    작성자
-    <input type="text" value="${board.writer}" readonly>
-</div>
-<div>
-    작성일시
-    <input type="datetime-local" value="${board.inserted}" readonly>
-</div>
-
-<div>
-    <form action="/board/delete" method="post">
-        <input type="hidden" name="id" value="${board.id}">
-        <div>
-            <button>삭제</button>
-        </div>
-    </form>
+<h2>${board1.id}번 수정</h2>
+<form method="post">
     <div>
-        <a href="/board/edit?id=${board.id}">수정</a>
+        제목
+        <input type="text" name="title" value="${board1.title}"/>
     </div>
-</div>
-</body>
-</html>
+    <div>
+        본문
+        <textarea name="content" id="" cols="30" rows="10" value=${board1.content}></textarea>
+    </div>
+    <div>
+        작성자
+        <input type="text" name="writer" value=${board1.writer}/>
+    </div>
+    <div>
+        <button>저장</button>
+    </div>
+
+
+</form>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

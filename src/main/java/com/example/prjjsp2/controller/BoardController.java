@@ -30,10 +30,9 @@ public class BoardController {
     }
 
     @PostMapping("new")
-    public String newBoard(Board board, RedirectAttributes rttr) {
+    public String newBoard(Board board) {
         service.add(board);
 
-        rttr.addAttribute("id", board.getId());
         return "redirect:/board/list";
     }
 
@@ -50,4 +49,22 @@ public class BoardController {
         model.addAttribute("board", board);
     }
 
+    @PostMapping("delete")
+    public String deleteBoard(Integer id) {
+        service.delete(id);
+        return "redirect:/board/list";
+    }
+
+    @GetMapping("edit")
+    public void editBoard(Integer id, Model model) {
+        Board board = service.get(id);
+        model.addAttribute("board1", board);
+    }
+
+    @PostMapping("edit")
+    public String editBoard(Board board, RedirectAttributes rttr) {
+        service.update(board);
+        rttr.addAttribute("id", board.getId());
+        return "redirect:/board/view";
+    }
 }
