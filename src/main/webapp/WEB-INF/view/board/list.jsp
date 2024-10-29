@@ -34,6 +34,13 @@
             <td>${board.writer}</td>
             <td>${board.inserted}</td>
         </tr>
+
+        <%--pagenation--%>
+        <div>
+            <c:forEach begin="1" end="15" var="pageNumber">
+                <a href="/board/list?page=${pageNumber}">${pageNumber}</a>
+            </c:forEach>
+        </div>
     </c:forEach>
 
     </tbody>
