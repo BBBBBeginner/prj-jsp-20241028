@@ -18,5 +18,13 @@ ALTER TABLE board
 ALTER TABLE board
     CHANGE COLUMN id id INT PRIMARY KEY AUTO_INCREMENT;
 
+SELECT COUNT(*)
+FROM board;
+
+INSERT INTO board
+    (title, content, writer)
+SELECT title, content, writer
+FROM board;
+
 
 
