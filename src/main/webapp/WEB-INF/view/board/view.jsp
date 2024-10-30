@@ -41,7 +41,7 @@
                 </label>
                 <input class="form-control" type="datetime-local" value="${board.inserted}" readonly>
             </div>
-            <button form="deleteForm1" class="btn btn-outline-danger">
+            <button class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#deleteConfirmModal1">
                 <i class="fa-solid fa-trash-can"></i>
                 삭제
             </button>
@@ -52,6 +52,29 @@
             <form id="deleteForm1" class="d-none" action="/board/delete" method="post">
                 <input type="hidden" name="id" value="${board.id}">
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="deleteConfirmModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">삭제 확인</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ${board.id}번 게시물을 삭제하시겠습니까?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    닫기
+                </button>
+                <button form="deleteForm1" class="btn btn-danger">
+                    삭제
+                </button>
+            </div>
         </div>
     </div>
 </div>
