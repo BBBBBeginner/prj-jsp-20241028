@@ -7,8 +7,7 @@ import java.util.List;
 
 @Mapper
 public interface BoardMapper {
-
-
+    
     @Insert("""
             INSERT INTO board
             (title, content, writer)
@@ -54,7 +53,7 @@ public interface BoardMapper {
             LIMIT #{offset}, 10
             """)
     List<Board> selectAllPaging(Integer offset);
-    
+
 
     @Select("""
             SELECT COUNT(id) FROM board
