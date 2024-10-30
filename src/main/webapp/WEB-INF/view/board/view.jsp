@@ -42,11 +42,11 @@
                 <input class="form-control" type="datetime-local" value="${board.inserted}" readonly>
             </div>
             <button form="deleteForm1" class="btn btn-outline-danger">
-                <i class="fa-regular fa-trash-can"></i>
+                <i class="fa-solid fa-trash-can"></i>
                 삭제
             </button>
             <a class="btn btn-outline-primary" href="/board/edit?id=${board.id}">
-                <i class="fa-regular fa-pen-to-square"></i>
+                <i class="fa-solid fa-trash-can"></i>
                 수정
             </a>
             <form id="deleteForm1" class="d-none" action="/board/delete" method="post">
