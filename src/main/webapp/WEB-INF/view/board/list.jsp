@@ -34,17 +34,17 @@
             <td>${board.writer}</td>
             <td>${board.inserted}</td>
         </tr>
-
-        <%--pagenation--%>
-        <div>
-            <c:forEach begin="1" end="15" var="pageNumber">
-                <a href="/board/list?page=${pageNumber}">${pageNumber}</a>
-            </c:forEach>
-        </div>
     </c:forEach>
-
     </tbody>
 </table>
+
+<%--pagenation--%>
+<div>
+    <c:forEach begin="1" end="15" var="pageNumber">
+        <a href="/board/list?page=${pageNumber}">${pageNumber}</a>
+    </c:forEach>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
         crossorigin="anonymous"></script>
