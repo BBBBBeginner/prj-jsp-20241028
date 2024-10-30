@@ -4,6 +4,7 @@ import com.example.prjjsp2.dto.Member;
 import com.example.prjjsp2.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,8 +33,11 @@ public class MemberController {
         rttr.addFlashAttribute("message", Map.of("type", "success",
                 "text", "회원가입되었습니다."));
 
-        return "redirect:/member/signup";
+        return "redirect:/board/list";
     }
 
-
+    @GetMapping("list")
+    public void list(Model model) {
+        model.addAttribute("memberList", service.list());
+    }
 }
