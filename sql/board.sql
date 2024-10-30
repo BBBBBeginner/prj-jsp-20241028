@@ -19,7 +19,7 @@ ALTER TABLE board
     CHANGE COLUMN id id INT PRIMARY KEY AUTO_INCREMENT;
 
 SELECT COUNT(*)
-FROM board;
+FROM jsp2.board;
 
 INSERT INTO board
     (title, content, writer)
