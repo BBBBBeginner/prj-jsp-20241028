@@ -18,7 +18,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-9 col-lg-6">
             <h2 class="my-3">${board.id}번 게시물 수정</h2>
-            <form method="post">
+            <form method="post" id="updateForm1">
                 <div class="mb-3">
                     <label for="inputTitle1" class="form-label">
                         제목
@@ -39,7 +39,8 @@
                     <input id="inputWriter1" class="form-control" type="text" name="writer" value="${board.writer}">
                 </div>
                 <div class="mb-3">
-                    <button class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#updateConfirmModal1">
                         <i class="fa-regular fa-floppy-disk"></i>
                         저장
                     </button>
@@ -49,7 +50,54 @@
     </div>
 </div>
 
-</form>
+<!-- Modal -->
+<div class="modal fade" id="updateConfirmModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    저장 확인
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ${board.id}번 게시물을 저장하시겠습니까?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    닫기
+                </button>
+                <button form="updateForm1" class="btn btn-primary">
+                    저장
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="updateConfirmModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">
+                    저장 확인
+                </h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ${board.id}번 게시물을 저장하시겠습니까?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    닫기
+                </button>
+                <button form="updateForm1" class="btn btn-primary">
+                    저장
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
