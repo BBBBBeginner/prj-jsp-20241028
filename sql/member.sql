@@ -10,5 +10,8 @@ CREATE TABLE member
 );
 
 SELECT *
-FROM member;
+FROM jsp2.member;
+
+ALTER TABLE member
+    CHANGE COLUMN nick_name nickName VARCHAR(100) NOT NULL UNIQUE;
 
