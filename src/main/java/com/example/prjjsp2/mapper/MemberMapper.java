@@ -25,4 +25,11 @@ public interface MemberMapper {
             ORDER BY id DESC
             """)
     List<Member> selectALL();
+
+
+    @Select("""
+            SELECT * FROM member
+            WHERE id = #{id}
+            """)
+    Member selectById(String id);
 }
