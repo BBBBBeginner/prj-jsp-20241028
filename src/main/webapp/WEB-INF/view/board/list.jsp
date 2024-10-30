@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
           integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <style>
+        .active {
+            background-color: yellow;
+        }
+    </style>
 </head>
 <body>
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
@@ -43,7 +48,8 @@
     <c:forEach begin="${pageInfo.leftPageNumber}"
                end="${pageInfo.rightPageNumber}"
                var="pageNumber">
-        <a href="/board/list?page=${pageNumber}">${pageNumber}</a>
+        <a class="${pageInfo.currentPageNumber == pageNumber ? 'active' : ''}"
+           href="/board/list?page=${pageNumber}">${pageNumber}</a>
     </c:forEach>
 </div>
 
