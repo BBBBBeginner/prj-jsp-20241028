@@ -40,7 +40,11 @@
         </div>
     </form>
     <div>
-        <a href="/board/edit?id=${board.id}">수정</a>
+        <a href="/board/edit?id=${board.id}">
+            <button>
+                수정
+            </button>
+        </a>
     </div>
 </div>
 </body>

@@ -12,7 +12,9 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 </head>
 <body>
-<c:import url="/WEB-INF/fragment/navbar.jsp"/>
+<c:import url="/WEB-INF/fragment/navbar.jsp">
+    <c:param name="active" value="new"/>
+</c:import>
 <h2>새 게시물 작성</h2>
 <form method="post">
     <div>
