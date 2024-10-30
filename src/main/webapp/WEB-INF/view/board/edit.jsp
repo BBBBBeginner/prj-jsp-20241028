@@ -14,24 +14,40 @@
 </head>
 <body>
 <c:import url="/WEB-INF/fragment/navbar.jsp"/>
-<h2>${board1.id}번 수정</h2>
-<form method="post">
-    <div>
-        제목
-        <input type="text" name="title" value="${board1.title}"/>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-md-9 col-lg-6">
+            <h2 class="my-3">${board.id}번 게시물 수정</h2>
+            <form method="post">
+                <div class="mb-3">
+                    <label for="inputTitle1" class="form-label">
+                        제목
+                    </label>
+                    <input id="inputTitle1" class="form-control" type="text" name="title" value="${board.title}">
+                </div>
+                <div class="mb-3">
+                    <label for="textareaContent1" class="form-label">
+                        본문
+                    </label>
+                    <textarea id="textareaContent1" class="form-control" name="content"
+                              rows="10">${board.content}</textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="inputWriter1" class="form-label">
+                        작성자
+                    </label>
+                    <input id="inputWriter1" class="form-control" type="text" name="writer" value="${board.writer}">
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-primary">
+                        <i class="fa-regular fa-floppy-disk"></i>
+                        저장
+                    </button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div>
-        본문
-        <textarea name="content" id="" cols="30" rows="10" value=${board1.content}></textarea>
-    </div>
-    <div>
-        작성자
-        <input type="text" name="writer" value=${board1.writer}/>
-    </div>
-    <div>
-        <button>저장</button>
-    </div>
-
+</div>
 
 </form>
 
